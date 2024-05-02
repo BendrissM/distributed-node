@@ -3,9 +3,11 @@
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
+  "type": "module",
   "scripts": {
     "start": "ts-node index.ts",
-    "dev": "nodemon --watch ./**/*.ts --exec ts-node index.ts"
+    "dev": "nodemon --watch ./**/*.ts --exec node --no-warnings=ExperimentalWarning --loader ts-node/esm index.ts",
+    "dev:secure": "nodemon --watch ./**/*.ts --exec node --no-warnings=ExperimentalWarning --loader ts-node/esm indexSecure.ts"
   },
   "keywords": [],
   "author": "",
@@ -17,6 +19,7 @@
     "typescript": "^5.4.5"
   },
   "dependencies": {
-    "express": "^4.19.2"
+    "express": "^4.19.2",
+    "node-fetch": "^3.3.2"
   }
 }
